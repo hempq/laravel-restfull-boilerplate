@@ -2,14 +2,13 @@
 
 namespace App\Http\Middleware;
 
-use Closure;/**
+use Closure;
 
-
+/**
  * Class APIVersion
  * @package App\Http\Middleware
  */
-class APIVersion
-{
+class APIVersion{
     /**
      * Handle an incoming request.
      *

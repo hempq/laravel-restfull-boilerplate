@@ -18,7 +18,8 @@
 		"k--kato.intellij-idea-keybindings",
 		"GitHub.copilot",
 		"KnisterPeter.vscode-github",
-		"onecentlin.laravel-extension-pack"
+		"onecentlin.laravel-extension-pack",
+        "HookyQR.beautify"
 		// "onecentlin.laravel-blade"
 	],
 	"remoteUser": "sail",

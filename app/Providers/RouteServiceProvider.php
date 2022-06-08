@@ -37,6 +37,14 @@ class RouteServiceProvider extends ServiceProvider
         ], function ($router) {
             require base_path('routes/api_v1.php');
         });
+
+        Route::group([
+            'middleware' => ['api', 'api_version:v2'],
+            'namespace'  => "{$this->apiNamespace}\V2",
+            'prefix'     => 'api/v2',
+        ], function ($router) {
+            require base_path('routes/api_v2.php');
+        });
     }
 
     /**
@@ -49,9 +57,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
+            $this->mapApiRoutes();
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
